@@ -19,6 +19,13 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteConfig.description} />
+    <!-- Open Graph for LinkedIn -->
+    <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+    <meta property="og:description" content={siteConfig.description} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://cofoundy.github.io/portfolio-ernesto-moral/" />
+    <meta property="og:image" content="https://cofoundy.github.io/portfolio-ernesto-moral/profile.jpg" />
+    <meta property="og:locale" content="es_PE" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

@@ -61,7 +61,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                       class="inline-block w-1.5 h-1.5 rounded-full mt-1.5 mr-2 flex-shrink-0"
                       style={`background-color: ${siteConfig.colors.accent}`}
                     />
-                    <Fragment set:html={achievement} />
+                    <span><Fragment set:html={achievement} /></span>
                   </li>
                 ))}
               </ul>

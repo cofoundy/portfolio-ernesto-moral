@@ -32,6 +32,15 @@ export const siteConfig = {
     author: "Ernesto Moral",
   },
 
+  // Premium: CTA for LinkedIn Coaching & Mentoring service
+  cta: {
+    title: "¿Buscas coaching en Operational Excellence?",
+    description:
+      "Con más de 10 años liderando transformaciones Lean Six Sigma, te ayudo a diseñar e implementar mejoras operacionales que generan resultados medibles. Agenda una sesión de diagnóstico.",
+    buttonText: "Conversemos",
+    emailSubject: "Consulta - Coaching en Mejora Continua",
+  },
+
   social: {
     email: "ernesto.moral@outlook.com.pe",
     linkedin: "https://linkedin.com/in/ernestomoral",
