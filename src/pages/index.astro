@@ -1,10 +1,12 @@
 ---
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
 import About from "../components/About.astro";
 import Projects from "../components/Projects.astro";
 import Experience from "../components/Experience.astro";
 import Education from "../components/Education.astro";
+import CoachingCTA from "../components/CoachingCTA.astro";
 import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
@@ -20,20 +22,46 @@ import "../styles/global.css";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>
     <Header />
-    <section>
+    <main>
       <Hero />
+      <Services />
       <About />
       <Projects />
       <Experience />
       <Education />
-    </section>
+      <CoachingCTA />
+    </main>
     <Footer />
+
+    <!-- Scroll Reveal Animation Script -->
+    <script>
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.1
+      };
+
+      const revealOnScroll = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(revealOnScroll, observerOptions);
+
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
